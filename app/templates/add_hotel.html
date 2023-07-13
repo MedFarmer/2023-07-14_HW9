@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add hotel</title>
+</head>
+<body>
+    <form method="POST">
+        {% csrf_token %}    
+        <select name="name">
+            {% for choice in choices %}
+            <option value="{{ choice }}"> {{ choice }} </option>
+            {% endfor %}
+        </select>
+        <button type="submit"> Add hotel </button>
+    </form> 
+    <br>
+    <br>
+    <a href="{% url 'index' %}"> back to index </a>
+</body>
+</html>

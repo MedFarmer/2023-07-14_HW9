@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index </title>
+</head>
+<body>    
+    <h1>HOTELS</h1>
+    <div>
+        {% for hotel in hotels %}
+        <ul>
+            <li> {{ hotel.name }} </li>        
+        </ul>
+        {% endfor %}
+
+    </div> 
+    <a href="{% url 'add_hotel' %}"> Add hotel </a> <br> <br>  
+    <a href="{% url 'delete' %}"> Delete all hotels </a><br> <br>  
+    <a href="{% url 'cyclical_add_hotel' %}"> Cyclical add hotels </a>
+</body>
+</html>
